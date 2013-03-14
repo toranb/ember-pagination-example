@@ -1,0 +1,8 @@
+This example project shows how to implement client-side pagination using ember.js RC1
+
+The example is 100% server agnostic, just drag the index.html page into your browser
+
+To run the jasmine tests
+
+1. npm install
+2. node node_modules/jasmine-phantom-node/bin/jasmine-phantom-node example/static
