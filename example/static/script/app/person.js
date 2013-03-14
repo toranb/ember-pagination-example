@@ -31,6 +31,7 @@ PersonApp.PersonPageRoute = Ember.Route.extend({
 
 PersonApp.PersonRoute = Ember.Route.extend({
     model: function(params) {
+        this.controllerFor('person').set('selectedPage', 1);
         return PersonApp.Person.find();
     }
 });
