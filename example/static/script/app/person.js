@@ -45,7 +45,10 @@ PersonApp.Person = DS.Model.extend({
         var two = PersonApp.Person.createRecord({id:2,username:'dave two'});
         var three = PersonApp.Person.createRecord({id:3,username:'dave three'});
         var four = PersonApp.Person.createRecord({id:4,username:'dave four'});
-        return [one,two,three,four];
+        var five = PersonApp.Person.createRecord({id:5,username:'dave five'});
+        var six = PersonApp.Person.createRecord({id:6,username:'dave six'});
+        var seven = PersonApp.Person.createRecord({id:7,username:'dave seven'});
+        return [one,two,three,four, five, six, seven];
     } 
 });
 
