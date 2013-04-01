@@ -7,7 +7,6 @@ PersonApp.PersonController = Ember.ArrayController.extend(Ember.PaginationMixin,
 PersonApp.PaginationView = Ember.View.extend({
     templateName: 'pagination',
     tagName: 'li',
-    spanClasses: 'paginator pageNumber',
 
     page: function() {
         return Ember.Object.create({id: this.get('content.page_id')});
@@ -36,27 +35,21 @@ PersonApp.PersonRoute = Ember.Route.extend({
     }
 });
 
-//the below is just basic data setup for the example (nothing pagination specific)
 PersonApp.Person = DS.Model.extend({
     username: DS.attr('string')
-}).reopenClass({
-    find: function() {
-        var one = PersonApp.Person.createRecord({id:1,username:'dave one'});
-        var two = PersonApp.Person.createRecord({id:2,username:'dave two'});
-        var three = PersonApp.Person.createRecord({id:3,username:'dave three'});
-        var four = PersonApp.Person.createRecord({id:4,username:'dave four'});
-        var five = PersonApp.Person.createRecord({id:5,username:'dave five'});
-        var six = PersonApp.Person.createRecord({id:6,username:'dave six'});
-        var seven = PersonApp.Person.createRecord({id:7,username:'dave seven'});
-        return [one,two,three,four, five, six, seven];
-    } 
 });
 
 PersonApp.Store = DS.Store.extend({
-    revision: 11,
-    adapter: DS.Adapter.create({
-        createRecord: function(store, type, object) {
-            console.log(object.toJSON());
-        }
-    })
+    revision: 12,
+    adapter: 'DS.FixtureAdapter'
 });
+
+PersonApp.Person.FIXTURES = [
+    {id:1,username:'dave one'},
+    {id:2,username:'dave two'},
+    {id:3,username:'dave three'},
+    {id:4,username:'dave four'},
+    {id:5,username:'dave five'},
+    {id:6,username:'dave six'},
+    {id:7,username:'dave seven'}
+];
