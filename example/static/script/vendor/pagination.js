@@ -53,6 +53,11 @@ Ember.PaginationMixin = Ember.Mixin.create({
     return Math.ceil((this.get('content.length') / this.get('itemsPerPage')) || 1);
 
   }.property('content.length'),
+  
+  multiplePages: function() {
+    
+    return this.get('availablePages.length') > 1;
+  }.property('availablePages.length'),
 
   paginatedContent: function() {
 
