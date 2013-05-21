@@ -59,7 +59,7 @@ Ember.PaginationMixin = Ember.Mixin.create({
     var selectedPage = this.get('selectedPage') || 1;
     var upperBound = (selectedPage * this.get('itemsPerPage'));
     var lowerBound = (selectedPage * this.get('itemsPerPage')) - this.get('itemsPerPage');
-    var models = this.get('content');
+    var models = this.get('arrangedContent');
 
     return models.slice(lowerBound, upperBound);
 
