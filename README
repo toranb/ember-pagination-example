@@ -1,4 +1,4 @@
-This example project shows how to implement client-side pagination using ember.js RC1
+This example project shows how to implement client-side pagination using ember.js
 
 The example is 100% server agnostic, just drag the index.html page into your browser
 
