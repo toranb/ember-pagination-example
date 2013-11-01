@@ -8,14 +8,14 @@ Ember.PaginationMixin = Ember.Mixin.create({
     pages = [],
     page;
 
-    for (i = 0; i < availablePages; i++) {
+    for (var i = 0; i < availablePages; i++) {
       page = i + 1;
-      pages.push({ page_id: page.toString() });
+      pages.push({ page_id: page.toString(), is_current: page === this.get('currentPage') });
     }
 
     return pages;
 
-  }.property('availablePages'),
+  }.property('availablePages', 'currentPage'),
 
   currentPage: function() {
 
